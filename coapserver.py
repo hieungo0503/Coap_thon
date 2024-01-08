@@ -36,8 +36,8 @@ def usage():  # pragma: no cover
 
 def main(argv):  # pragma: no cover
     ip = "0.0.0.0"
-    port = 5683
-    multicast = False
+    port = 9999
+    multicast = True
     try:
         opts, args = getopt.getopt(argv, "hi:p:m", ["ip=", "port=", "multicast"])
     except getopt.GetoptError:
@@ -59,7 +59,7 @@ def main(argv):  # pragma: no cover
         server.listen(10)
     except KeyboardInterrupt:
         print("Server Shutdown")
-        server.close()
+        server.close() 
         print("Exiting...")
 
 

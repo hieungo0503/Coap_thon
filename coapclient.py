@@ -51,9 +51,9 @@ def client_callback_observe(response):  # pragma: no cover
 
 def main():  # pragma: no cover
     global client
-    op = None
-    path = None
-    payload = None
+    op = "POST"
+    path = "coap://demo.thingsboard.io:5683/api/v1/e91DHS5VVHyz5DQTODuM/telemetry"
+    payload = "{temperature:30}"
     try:
         opts, args = getopt.getopt(sys.argv[1:], "ho:p:P:f:", ["help", "operation=", "path=", "payload=",
                                                                "payload_file="])

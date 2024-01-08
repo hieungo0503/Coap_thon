@@ -165,15 +165,15 @@ class HelperClient(object):
         request = self.mk_request(defines.Codes.POST, path)
         request.token = generate_random_token(2)
         request.payload = payload
-
+        
         if no_response:
             request.add_no_response()
             request.type = defines.Types["NON"]
 
         for k, v in kwargs.items():
             if hasattr(request, k):
-                setattr(request, k, v)
-
+               setattr(request, k, v)
+        
         return self.send_request(request, callback, timeout, no_response=no_response)
 
     def put(self, path, payload, callback=None, timeout=None, no_response=False, **kwargs):  # pragma: no cover
